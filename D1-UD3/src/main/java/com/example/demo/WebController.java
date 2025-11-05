@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class WebController {
-	static Map<String, String> datos = new LinkedHashMap<String, String>();
+	
 	
 	@GetMapping("/")
 	public String showForm(Model modelo) {
