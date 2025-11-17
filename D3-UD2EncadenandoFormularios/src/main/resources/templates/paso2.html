@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Paso 2</title>
+</head>
+<body>
+<h1>Paso 2: Género y país favorito</h1>
+
+<form th:action="@{/paso2}" method="post">
+    <input type="hidden" name="nombre" th:value="${nombre}"/>
+    <input type="hidden" name="datos" th:each="d:${datos}" th:value="${d}"/>
+
+    <p>Género:</p>
+    <input type="radio" name="genero" value="Masculino" th:checked="${genero=='Masculino'}"/> Masculino
+    <input type="radio" name="genero" value="Femenino" th:checked="${genero=='Femenino'}"/> Femenino
+    <input type="radio" name="genero" value="Otro" th:checked="${genero=='Otro'}"/> Otro
+    <input type="radio" name="genero" value="Prefiero no decir" th:checked="${genero=='Prefiero no decir'}"/> Prefiero no decir
+
+    <p>País favorito:
+        <select name="pais">
+            <option value="">--Selecciona--</option>
+            <option value="España" th:selected="${pais=='España'}">España</option>
+            <option value="Francia" th:selected="${pais=='Francia'}">Francia</option>
+            <option value="Italia" th:selected="${pais=='Italia'}">Italia</option>
+            <option value="Japón" th:selected="${pais=='Japón'}">Japón</option>
+        </select>
+    </p>
+
+    <p><input type="submit" value="Siguiente"/></p>
+</form>
+
+<!-- Botón Atrás -->
+<a th:href="@{/paso1(nombre=${nombre}, datos=${datos})}">Atrás</a>

@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Paso 1</title>
+</head>
+<body>
+<h1>Paso 1: Nombre</h1>
+
+<form th:action="@{/paso1}" method="post">
+    <p>Nombre: <input type="text" name="nombre" th:value="${nombre}" required/></p>
+    <p th:if="${error}" th:text="${error}" style="color:red"></p>
+    <p><input type="submit" value="Siguiente"/></p>
+</form>
+</body>
+</html>

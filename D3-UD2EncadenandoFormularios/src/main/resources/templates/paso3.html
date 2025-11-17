@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Paso 3</title>
+</head>
+<body>
+<h1>Paso 3: Platos favoritos</h1>
+
+<form th:action="@{/paso3}" method="post">
+    <input type="hidden" name="nombre" th:value="${nombre}"/>
+    <input type="hidden" name="genero" th:value="${genero}"/>
+    <input type="hidden" name="pais" th:value="${pais}"/>
+    <input type="hidden" name="datos" th:each="d:${datos}" th:value="${d}"/>
+
+    <p>Selecciona tus platos favoritos:</p>
+    <input type="checkbox" name="platos" value="Pizza"/> Pizza
+    <input type="checkbox" name="platos" value="Sushi"/> Sushi
+    <input type="checkbox" name="platos" value="Paella"/> Paella
+    <input type="checkbox" name="platos" value="Ensalada"/> Ensalada
+
+    <p><input type="submit" value="Finalizar"/></p>
+</form>
+
+<a th:href="@{/paso2(nombre=${nombre}, datos=${datos}, genero=${genero}, pais=${pais})}">Atrás</a>
+
+</body>
+</html>
+
+
