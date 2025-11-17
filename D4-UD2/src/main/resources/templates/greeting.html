@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Pruebas de Codificación</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<h1>Formulario POST</h1>
+<form th:action="@{/greeting-post}" method="post">
+    <p>Id: <input type="text" name="id"/></p>
+    <p>Content: <input type="text" name="content"/></p>
+    <p><input type="submit" value="Enviar POST"/></p>
+</form>
+
+<hr>
+
+<h1>Formulario GET</h1>
+<form th:action="@{/greeting-get}" method="get">
+    <p>Id: <input type="text" name="id"/></p>
+    <p>Content: <input type="text" name="content"/></p>
+    <p><input type="submit" value="Enviar GET"/></p>
+</form>
+
+</body>
+</html>

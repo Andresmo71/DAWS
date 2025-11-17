@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Resultado</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<h1>Resultado recibido</h1>
+
+<p th:text="'Id: ' + ${id}"></p>
+<p th:text="'Content: ' + ${content}"></p>
+
+<h2>Enlace GET con parámetro codificado</h2>
+
+<a th:href="@{'/greeting-get'(id=${id}, content=${encoded})}">
+    Probar enlace con content codificado
+</a>
+
+<br/><br/>
+<a href="/greeting">Volver al formulario</a>
+
+</body>
+</html>
