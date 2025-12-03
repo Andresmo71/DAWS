@@ -1,0 +1,5 @@
+Plátano:95
+Brocoli:100
+Peras:100
+Uvas:100
+Manzanas:10
