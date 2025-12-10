@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Carrito de la compra</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<divbody>
+	<!-- <p th:if="${nombre}" th:text="|Tu nombre es ${nombre}" /> -->
+	<h1>Disfruta y verdura:</h1>
+	<p th:text="${errores}" /p>
+	
+	<div th:unless="${finalCompra}">
+    <form action="/" method="post">
+		<!-- Esta plantilla recibe una lista llamada almacen de objetos 
+			de tipo almacen que tiene como atributos:
+		- Nombre producto
+		- precio producto
+		- stock producto-->
+		<p th:each="producto : ${almacen}">
+			<label th:text="|${producto.nombre} : ${producto.precio}€)|" />
+			<input type="number" name="${producto.nombre}" value="0"/>	
+		</p>
+		
+        
+        <!-- 
+		<input type="submit" name="continuar" value="Continuar" /> 
+		-->
+		<input type="submit" name="comprar" value="Terminar compra" />
+		</p>
+    </form>
+	<!-- 
+	<h2>Acumulado:</h2>
+		<ul>
+			<li th:each="productoYCantidad : ${productosYcantidades}" th:text="${productoYCantidad}" />
+		</ul>
+		<h3 th:text="|Total: ${total}" />
+	-->
+	</div>	
+	
+	<div th:if="${finalCompra}">
+		<h2>Resumen compra:</h2>
+		<ul>
+			<li th:each="productoYCantidad : ${productosYcantidades}" th:text="${productoYCantidad}" />
+		</ul>
+	</div>
+	
+	<a href="/">Realizar otra compra</a>
+	
+	
+	
+	<h2>Stock disponible</h2>
+	<ul>
+				<li th:each="producto : ${productoAlmacen}" th:text="|${producto.nombre} : ${sproducto.stock} " />
+			</ul>
+	
+</body>
+</html>
