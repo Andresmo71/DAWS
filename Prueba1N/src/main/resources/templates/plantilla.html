@@ -1,0 +1,9 @@
+<ul>
+	<li th:each="profesor : ${profesores}">
+		<p th:text="${profesor}"></p>
+		<ul>
+		<li th:each="email : ${profesor.emails}" th:text="${email}"></li>
+		</ul>
+	</li>
+	
+</ul>
